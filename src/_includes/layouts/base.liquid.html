@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {%- capture page_title -%}
+    {%- assign current_title = seo_title | default: title -%}
+    {% if current_title %}{{ current_title }} | {% endif %}{{ site.title }}
+  {%- endcapture -%}
+  <title>{{ page_title }}</title>
+  
+  <meta name="description" content="{{ seo_description | default: site.seo_description }}">
+  <meta name="generator" content="{{ eleventy.generator }}">
+
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url }}">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+
+  <style>
+    {% getBundle "css" %}
+  </style>
+</head>
+<body>
+  {% include "partials/svg-sprite.liquid" %}
+
+  <main>
+    {{ content }}
+  </main>
+
+</body>
+</html>

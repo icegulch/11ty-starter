@@ -1,0 +1,20 @@
+---
+layout: layouts/base.liquid
+permalink: /index.html
+title: Home
+seo_title: The Place of All Things Steve
+---
+
+<header>
+  <h1>
+    <svg><use xlink:href='#close' /></svg>
+    <span>Welcome to {{ site.title }}!</span>
+  </h1>
+  <p>{{ site.seo_description }}</p>
+  <p>Current ENV: <code>{{ site.environment}}</code></p>
+  <p>What Year Is It? <code>{{ site.year }}</code></p>
+</header>
+
+{% css %}
+  {% include "css/homepage.css" %}
+{% endcss %}

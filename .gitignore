@@ -1,0 +1,27 @@
+# --- Eleventy Outputs ---
+# This is the folder where 11ty builds your site.
+_site/
+
+# --- Dependencies ---
+# Never commit these; let 'npm install' handle it.
+node_modules/
+package-lock.json
+
+# --- Environment & Secrets ---
+# If you use API keys or secret tokens, put them in a .env file.
+.env
+*.local
+
+# --- Tooling & Cache ---
+# 11ty uses this to cache images and fetch data faster.
+.cache/
+.eleventy-cache/
+
+# --- OS Junk ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

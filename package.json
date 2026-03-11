@@ -1,0 +1,19 @@
+{
+  "name": "agent-sms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "dotenv": "^17.3.1",
+    "html-minifier-terser": "^7.2.0"
+  }
+}

@@ -1,0 +1,19 @@
+
+header {
+  text-align: center;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  > svg {
+    width: 20px;
+    height: 20px;
+    fill: red;
+  }
+}
+
+code { color: red; }
+
