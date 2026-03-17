@@ -5,16 +5,12 @@ export default function (eleventyConfig) {
 
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("_site");
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy({ "static": "/" });
 
-  // 2. LiquidJS Fine-tuning (Optional)
   eleventyConfig.setLiquidOptions({
-    jsTruthy: true,      // Makes 0 and "" falsy (more like standard JS)
-    dynamicPartials: true // Required if you use variables in {% include %}
+    jsTruthy: true,
+    dynamicPartials: true
   });
-
-  eleventyConfig.addBundle("css");
-  // eleventyConfig.addBundle("js"); // Uncomment when ready to use {% js %}
 
   eleventyConfig.addTransform("htmlmin", async function (content) {
     if (process.env.NODE_ENV === "production" && this.page.outputPath?.endsWith(".html")) {
@@ -22,7 +18,7 @@ export default function (eleventyConfig) {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,
-        minifyCSS: true // This minifies your {% getBundle "css" %} output too!
+        minifyCSS: true
       });
       return minified;
     }

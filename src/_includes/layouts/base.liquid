@@ -18,11 +18,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url }}">
 
-  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/css/critical.css">
 
-  <style>
-    {% getBundle "css" %}
-  </style>
+  {% if pageStyles %}
+    {% for style in pageStyles %}
+      <link rel="stylesheet" href="/css/{{ style }}.css" media="print" onload="this.media='all'">
+    {% endfor %}
+  {% endif %}
 </head>
 <body>
   {% include "partials/svg-sprite.liquid" %}
